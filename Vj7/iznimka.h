@@ -6,8 +6,34 @@ private:
 	const char* poruka;
 
 public:
-	Iznimka(const char* p) : poruka(p) {}
 	const char* what(){
 		return poruka;
+	}
+};
+
+class NotaNum :public Iznimka
+{
+public:
+	const char*what(){
+		return "not a number";
+
+	}
+};
+
+class InvalidOperation:public Iznimka
+{
+public:
+	const char* what() {
+		return "invalid operation";
+
+	}
+};
+
+class divZero:public Iznimka
+{
+public:
+	const char* what() {
+		return "divide by zero";
+
 	}
 };

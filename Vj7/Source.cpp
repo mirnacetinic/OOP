@@ -16,7 +16,7 @@ int unos()
 
 	if (cin.fail() || isdigit(a)==1)
 	{
-		throw Iznimka("not a number");
+		throw NotaNum();
 	}
 
 	return a;
@@ -35,7 +35,7 @@ char operacija()
 
 	else
 	{
-		throw Iznimka("invalid operation");
+		throw InvalidOperation();
 	
 	}
 }
@@ -44,7 +44,7 @@ int rezultat(int a,int b,char c)
 {
 	if (b == 0 && c=='/')
 	{
-		throw Iznimka("devide by zero");
+		throw divZero();
 	}
 
 	else if (c == '+')
@@ -71,7 +71,6 @@ int main()
 {
 	vector<string> v;
 
-
 	while (1==1)
 	{
 		auto t = time(nullptr);
@@ -92,12 +91,23 @@ int main()
 			cout << x << " " << c << " " << y << " = " << rezultat(x, y, c) << endl;
 		}
 
-		catch(Iznimka i){
+		catch(divZero j){
 			string opis;
-			opis=str + " "+ i.what();
+			opis=str + " "+ j.what();
 			v.push_back(opis);
-			if (i.what() == "not a number")
+
+		}
+		catch (NotaNum i) {
+			string opis;
+			opis = str + " " + i.what();
+			v.push_back(opis);
 			break;
+
+		}
+		catch (InvalidOperation k) {
+			string opis;
+			opis = str + " " + k.what();
+			v.push_back(opis);
 
 		}
 
