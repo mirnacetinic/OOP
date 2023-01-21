@@ -34,5 +34,4 @@ void sort(char arr[], int size)
             }
         }
     }
-
 }
