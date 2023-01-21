@@ -17,7 +17,7 @@ int main()
     mv.print_vector();
 
     cout << "removing last element" << endl;
-    /*mv.vector_pop_back();*/
+    mv.vector_pop_back();
     mv.print_vector();
 
     cout << "size " << mv.vector_size() << endl;
