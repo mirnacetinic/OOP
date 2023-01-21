@@ -61,7 +61,7 @@ void MyVector::vector_push_back(int n)
 }
 void MyVector::vector_pop_back()
 {
-    /* TODO */
+    size-=1;
 }
 int& MyVector::vector_front()
 {
